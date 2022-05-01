@@ -43,21 +43,52 @@ namespace LinkedListProblem
                  head.next = temp;
              }
          }
-         public void Append(int data)
-         {
-             Node node = new Node(data);
-             Node temp = head;
-             while (temp.next != null)
-             {
-                 temp = temp.next;
-             }
-             temp.next = node;
-             Console.WriteLine(node.data + " " + "Appended into Linked List ");
-             
+         
+        internal int Search(int value)
+        {
+            Node node = this.head;
+            int count = 0;
+            while (node != null)
+            {
 
-         }
+                if (node.data == value)
+                {
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
 
-         public void Display()
+        internal Node InsertAtParticularPosition(int position, int data)
+        {
+            Node newestNode = new Node(data);
+            if (this.head == null)
+            {
+                return newestNode;
+            }
+            if (position == 0)
+            {
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            return this.head;
+        }
+
+        public void Display()
          {
              Node temp = this.head;
              if (temp == null)
