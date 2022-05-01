@@ -6,8 +6,9 @@ public class Program
     {
         Console.WriteLine("WELCOME IN THE LINKEDLIST");
         LinkedList list = new LinkedList();
+
         bool check = true;
-        Console.WriteLine(" 1 add \n 2.Add Reverse \n 3.Insert At Particular Position  \n 4.Search and Insert Element \n 5.Remove First Node \n 6.Remove Last \n 7.Delete At Particular Position \n  8. Display \n 9.end");
+        Console.WriteLine(" 1 add \n 2.Add Reverse \n 3.Insert At Particular Position  \n 4.Search and Insert Element \n 5.Remove First Node \n 6.Remove Last \n 7.Delete At Particular Position \n 8. Display \n 9. Sorting List \n 10.end");
         while (check)
         {
             Console.WriteLine(" **** ENTER THE ABOVE OPTION TO EXECUTE THE METHODS *****");
@@ -52,6 +53,18 @@ public class Program
                     list.Display();
                     break;
                 case 9:
+                    SortingList<int> sortingList = new SortingList<int>();
+                    sortingList.AddNode(56);
+                    sortingList.AddNode(30);
+                    sortingList.AddNode(40);
+                    sortingList.AddNode(70);
+                    Console.WriteLine("Original List :");
+                    sortingList.DisplaySort();
+                    sortingList.SortOrderedList();
+                    Console.WriteLine("Final Sorted List :");
+                    sortingList.DisplaySort();
+                    break;
+                case 10:
                     check = false;
                     break;
             }

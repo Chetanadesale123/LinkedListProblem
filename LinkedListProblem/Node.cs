@@ -15,4 +15,5 @@ namespace LinkedListProblem
             this.data = data;
         }
     }
+    
 }
