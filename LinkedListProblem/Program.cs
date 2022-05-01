@@ -7,7 +7,7 @@ public class Program
         Console.WriteLine("WELCOME IN THE LINKEDLIST");
         LinkedList list = new LinkedList();
         bool check = true;
-        Console.WriteLine(" 1 add \n 2.Add Reverse \n 3. Display \n 4.end");
+        Console.WriteLine(" 1 add \n 2.Add Reverse \n 3. Append \n  4. Display \n 5.end");
         while (check)
         {
             Console.WriteLine(" **** ENTER THE ABOVE OPTION TO EXECUTE THE METHODS *****");
@@ -21,14 +21,19 @@ public class Program
                     list.Add(70);
                     break;
                  case 2:
-                    list.AddInReverseOrder(70);
+                   list.AddInReverseOrder(70);
                     list.AddInReverseOrder(30);
-                    list.AddInReverseOrder(56);
-                    break;
+                   list.AddInReverseOrder(56);
+                   break;
                 case 3:
+                    list.Append(56);
+                    list.Append(30);
+                    list.Append(70);
+                    break ;
+                case 4:
                     list.Display();
                     break;
-                case 4:
+                case 5:
                     check = false;
                     break;
             }
