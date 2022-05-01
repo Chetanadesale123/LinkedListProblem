@@ -7,7 +7,7 @@ public class Program
         Console.WriteLine("WELCOME IN THE LINKEDLIST");
         LinkedList list = new LinkedList();
         bool check = true;
-        Console.WriteLine(" 1 add \n 2.Add Reverse \n 3.Insert At Particular Position  \n 4.Remove First Node \n  5. Display \n 6.end");
+        Console.WriteLine(" 1 add \n 2.Add Reverse \n 3.Insert At Particular Position  \n 4.Remove First Node \n 5.Rmove Last \n  6. Display \n 7.end");
         while (check)
         {
             Console.WriteLine(" **** ENTER THE ABOVE OPTION TO EXECUTE THE METHODS *****");
@@ -36,9 +36,12 @@ public class Program
                     list.RemoveFirstNode();
                     break;
                 case 5:
-                    list.Display();
+                    list.RemoveLastNode();
                     break;
                 case 6:
+                    list.Display();
+                    break;
+                case 7:
                     check = false;
                     break;
             }
