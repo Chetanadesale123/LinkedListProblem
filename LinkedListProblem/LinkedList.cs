@@ -9,41 +9,39 @@ namespace LinkedListProblem
     public class LinkedList
     {
         public Node head;
-       
-           
-         public void Add(int data)
-         {
-             Node node = new Node(data);
-             if (this.head == null)
-             {
-                 this.head = node;
-             }
-             else
-             {
-                 Node temp = head;
-                 while (temp.next != null)
-                 {
-                     temp = temp.next;
-                 }
-                 temp.next = node;
-                 Console.WriteLine("inserted into Linked List " + node.data);
-             }
-         }
-         public void AddInReverseOrder(int data)
-         {
-             Node newNode = new Node(data);
-             if (this.head == null)
-             {
-                 this.head = newNode;
-             }
-             else
-             {
-                 Node temp = this.head;
-                 head = newNode;
-                 head.next = temp;
-             }
-         }
-         
+        public void Add(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+                Console.WriteLine("inserted into Linked List " + node.data);
+            }
+        }
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+        }
+
         internal int Search(int value)
         {
             Node node = this.head;
@@ -87,20 +85,29 @@ namespace LinkedListProblem
             prev.next = newestNode;
             return this.head;
         }
+        internal Node RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
+        }
 
         public void Display()
-         {
-             Node temp = this.head;
-             if (temp == null)
-             {
-                 Console.WriteLine("Linked List is Emplty");
-             }
-             while (temp != null)
-             {
-                 Console.WriteLine(temp.data + " ");
-                 temp = temp.next;
-             }
-         }
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is Emplty");
+            }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
+            }
+        }
 
     }
 }
